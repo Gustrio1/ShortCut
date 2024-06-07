@@ -24,22 +24,19 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(0, 15.0, 0, 0),
-              child: Text("Rio",
+              child: Text("ShortCut",
                   style:
-                      TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold)),
+                      TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
             ),
-            Text("September 11, 2024",
-                style: TextStyle(
-                  fontSize: 10.0,
-                )),
+
           ],
         ),
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.fromLTRB(0, 2, 4, 0),
               child: Icon(
-                Icons.account_circle,
-                size: 50.0,
+                Icons.notifications,
+                size: 40.0,
               ))
         ],
       ),
@@ -50,17 +47,27 @@ class _HomeState extends State<Home> {
               height: 10,
             ),
             Padding(
-                padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Search"),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),  prefixIcon: Icon(Icons.search), labelText: "search"),
                 )),
             SizedBox(height: 10),
             Container(
               width: 391,
               height: 150,
               decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5), // warna shadow
+                    spreadRadius: 2, // radius penyebaran
+                    blurRadius: 5, // radius blur
+                    offset: Offset(0, 5), // offset shadow
+                  )
+                ],
                   color: Colors.amber, borderRadius: BorderRadius.circular(10)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -512,7 +519,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(icon: Icon(Icons.date_range), label: "Booking"),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle), label: "Acount"),
         ],
