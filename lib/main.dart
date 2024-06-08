@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_ui/widget/home.dart';
+import 'package:test_ui/widget/leading.dart';
 import 'package:test_ui/widget/login.dart';
 //import 'package:test_ui/widget/login.dart';
 
@@ -18,8 +19,7 @@ class _MainState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
-      routes: {"/": (context) => Login(), "/home": (context) => Home()},
+      home: Leading(),
     );
   }
 }

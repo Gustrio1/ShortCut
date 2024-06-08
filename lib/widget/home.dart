@@ -8,13 +8,16 @@ import '../model//ImgStory.dart';
 import 'package:image/image.dart' as img;
 
 class Home extends StatefulWidget {
-  const Home({super.key});
-
   @override
-  State<Home> createState() => _HomeState();
+  _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +31,6 @@ class _HomeState extends State<Home> {
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
             ),
-
           ],
         ),
         actions: <Widget>[
@@ -44,7 +46,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: 10,
+              height: 5,
             ),
             Padding(
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -53,22 +55,22 @@ class _HomeState extends State<Home> {
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15.0),
-                      ),  prefixIcon: Icon(Icons.search), labelText: "search"),
+                      ),
+                      prefixIcon: Icon(Icons.search),
+                      labelText: "Search"),
                 )),
             SizedBox(height: 10),
             Container(
               width: 391,
               height: 150,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5), // warna shadow
-                    spreadRadius: 2, // radius penyebaran
-                    blurRadius: 5, // radius blur
-                    offset: Offset(0, 5), // offset shadow
-                  )
-                ],
-                  color: Colors.amber, borderRadius: BorderRadius.circular(10)),
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5), // warna shadow
+                  spreadRadius: 2, // radius penyebaran
+                  blurRadius: 5, // radius blur
+                  offset: Offset(0, 5), // offset shadow
+                )
+              ], color: Colors.amber, borderRadius: BorderRadius.circular(10)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -133,136 +135,8 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: 10,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.all(0),
-                    child: Container(
-                      width: 130,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: AssetImage('assets/images/bg1.jpg'),
-                                    fit: BoxFit.cover)),
-                          ),
-                          Positioned(
-                            top: 70,
-                            left: 25,
-                            child: Container(
-                              padding: EdgeInsets.all(0),
-                              child: Text(
-                                "Hair Cut",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Container(
-                      width: 130,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: AssetImage('assets/images/bg2.jpg'),
-                                    fit: BoxFit.cover)),
-                          ),
-                          Positioned(
-                              top: 70,
-                              left: 20,
-                              child: Container(
-                                child: Text(
-                                  "Hair Styling",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ))
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(0),
-                    child: Container(
-                      width: 130,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: AssetImage("assets/images/bg3.jpg"),
-                                    fit: BoxFit.cover)),
-                          ),
-                          Positioned(
-                              top: 70,
-                              left: 25,
-                              child: Container(
-                                child: Text(
-                                  "Premium Cut",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ))
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.fromLTRB(12, 0, 0, 0),
-                  child: Text(
-                    "Top Barbers",
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-                  child: Text("See All"),
-                )
-              ],
             ),
             SizedBox(
               height: 15,
@@ -453,6 +327,140 @@ class _HomeState extends State<Home> {
               height: 15,
             ),
             Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(12, 0, 0, 0),
+                    child: Text(
+                      "Top Barbers",
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                    child: Text("See All"),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(0),
+                  child: Container(
+                    width: 130,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/bg1.jpg'),
+                                  fit: BoxFit.cover)),
+                        ),
+                        Positioned(
+                          top: 70,
+                          left: 25,
+                          child: Container(
+                            padding: EdgeInsets.all(0),
+                            child: Text(
+                              "Hair Cut",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Container(
+                    width: 130,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/bg2.jpg'),
+                                  fit: BoxFit.cover)),
+                        ),
+                        Positioned(
+                            top: 70,
+                            left: 20,
+                            child: Container(
+                              child: Text(
+                                "Hair Styling",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ))
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(0),
+                  child: Container(
+                    width: 130,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage("assets/images/bg3.jpg"),
+                                  fit: BoxFit.cover)),
+                        ),
+                        Positioned(
+                            top: 70,
+                            left: 25,
+                            child: Container(
+                              child: Text(
+                                "Premium Cut",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ))
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
               padding: EdgeInsets.all(1),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
@@ -515,15 +523,6 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.date_range), label: "Booking"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle), label: "Acount"),
-        ],
-        selectedItemColor: Colors.amber,
       ),
     );
   }
