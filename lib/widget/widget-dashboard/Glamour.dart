@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttericon/typicons_icons.dart';
 import 'package:fluttericon/fontelico_icons.dart';
 import 'package:fluttericon/linecons_icons.dart';
+import './widget-glamor/Specialis.dart';
+import './widget-glamor/servis.dart';
 
 class GlamourAcount extends StatefulWidget {
   const GlamourAcount({Key? key}) : super(key: key);
