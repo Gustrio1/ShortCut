@@ -38,6 +38,7 @@ dependencies:
   full_screen_image: ^2.0.0
   provider: ^6.1.2
   app_state: ^0.9.4
+  fluttericon: ^2.0.0
 
 dev_dependencies:
   flutter_test:

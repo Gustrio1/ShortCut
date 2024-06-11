@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_ui/widget/booking.dart';
 import 'package:test_ui/widget/home.dart';
+import 'package:test_ui/widget/profile.dart';
 
 void main() => runApp(LeadingHome());
 
@@ -22,7 +23,7 @@ class Leading extends StatefulWidget {
 
 class _LeadingState extends State<Leading> {
   int _bottomNavCurrentIndex = 0; // Deklarasikan _bottomNavCurrentIndex di sini
-  final List<Widget> _containers = [Home(), Booking()];
+  final List<Widget> _containers = [Home(), Booking(), Acount()];
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +58,17 @@ class _LeadingState extends State<Leading> {
               color: Colors.grey,
             ),
             label: 'Booking',
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Icon(
+              Icons.message,
+              color: Colors.yellow,
+            ),
+            icon: Icon(
+              Icons.message,
+              color: Colors.grey,
+            ),
+            label: 'Chet',
           ),
         ],
       ),
